@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    li {
+        font-weight: bold;
+    }
+</style>
+<body>
+
+<form id="myForm">
+    <input placeholder="Add item here" type="text" id="item">
+    <input type="button" value="Add Item" onclick="addItem()">
+</form>
+
+<div style="display: inline-block">
+    <ul></ul>
+</div>
+
+<p><b style="font: bold">Note:</b> click on a list element to delete it.</p>
+
+
+<script>
+    var ul_obj = document.getElementsByTagName('ul')[0];
+    ul_obj.addEventListener('click', removeItem);
+
+    function removeItem(e){
+        ul_obj.removeChild(e.target);
+    }
+
+    function addItem(){
+        var input_val = document.getElementById('item').value;
+        if (!input_val){
+            alert('Please provide an item.')
+        } else {
+            var form = document.getElementById("myForm");
+            var el = document.createElement('li');
+            var text_node = document.createTextNode(input_val);
+
+            el.appendChild(text_node);
+            ul_obj.appendChild(el);
+            form.reset()
+        }
+    }
+</script>
+
+</body>
+</html>
