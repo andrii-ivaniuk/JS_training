@@ -5,12 +5,11 @@ App.TodoModule = (function () {
   return {
     initListComponent: function (query) {
       var _rootEl;
-      var _ul_obj;
       _rootEl = document.getElementById(query);
       content = "<input placeholder='Add item here' type='text' name='item'> " +
       "<button>Add Item</button><div><ul></ul></div>";
       _rootEl.innerHTML = content;
-      _ul_obj = _rootEl.getElementsByTagName('ul') [0];
+      var _ul_obj = _rootEl.getElementsByTagName('ul') [0];
       _ul_obj.addEventListener('click', _removeItem);
       _rootEl.getElementsByTagName('button') [0].addEventListener('click', _addItem)
       function _addItem() {
