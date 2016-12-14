@@ -1,0 +1,24 @@
+div#main-container {
+    max-width:400px;
+}
+
+button.add {
+    float: right;
+}
+
+li a {
+    margin-left: 20px;
+    color: maroon;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.invalid {
+    border: 2px solid red;
+}
+
+p#invalid_input{
+    display: none;
+    font-weight: bold;
+    color: red;
+}
